@@ -39,13 +39,19 @@ namespace AppExemploCadastro.Formulario
                 txtCpf.Clear();
                 txtRegistroGeral.Clear();
                 txtEmail.Clear();
-                cbPessoa.SelectedIndex = -1;
+                
             }
         }
 
         private void btDeletar_Click(object sender, EventArgs e)
         {
             contexto.DeletarPessoa(pessoaSelecionada);
+
+            txtNome.Clear();
+            txtCpf.Clear();
+            txtRegistroGeral.Clear();
+            txtEmail.Clear();
+            cbPessoa.SelectedIndex = -1;
         }
     }
 }

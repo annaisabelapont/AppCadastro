@@ -13,7 +13,7 @@ namespace AppExemploCadastro.Contexto
 
         public PessoaContext()
         {
-            dados_conexao = "server=localhost;port=3306;database=bd_pessoa;user=root;password=root;Persist Security Info=False;Connect Timeout=300;";
+            dados_conexao = "server=localhost;port=3306;database=bd_registro;user=root;password=root;Persist Security Info=False;Connect Timeout=300;";
             conexao = new MySqlConnection(dados_conexao);
         }
 
@@ -27,13 +27,12 @@ namespace AppExemploCadastro.Contexto
 
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
-                // Adicionando parâmetros para evitar SQL Injection
                 comando.Parameters.AddWithValue("@Nome", pessoa.Nome);
                 comando.Parameters.AddWithValue("@Cpf", pessoa.Cpf);
                 comando.Parameters.AddWithValue("@RegistroGeral", pessoa.RegistroGeral);
                 comando.Parameters.AddWithValue("@Email", pessoa.Email);
 
-                int linhasAfestadas = comando.ExecuteNonQuery(); //executa o comando e mostrar quantas linhas foram afetadas
+                int linhasAfestadas = comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

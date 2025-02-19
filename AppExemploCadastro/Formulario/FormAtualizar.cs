@@ -61,6 +61,22 @@ namespace AppExemploCadastro.Formulario
                 txtRegistroGeral.Text = pessoaSelec.RegistroGeral;
                 txtEmail.Text = pessoaSelec.Email;
             }
+            else
+            {
+                txtNome.Clear();
+                txtEmail.Clear();
+                txtCpf.Clear();
+                txtRegistroGeral.Clear();
+            }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtCpf.Clear();
+            txtRegistroGeral.Clear();
+            cbPessoa.SelectedIndex = -1;
         }
     }
 }
